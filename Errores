@@ -1,0 +1,9 @@
+#web consulta
+https://github.com/rralcode/R
+https://rdrr.io/snippets/
+
+#errores
+install.packages("~/CodeR/raster_2.5-8.zip", repos = NULL, type = "win.binary")
+
+install.packages("raster_2.5-8.zip",
+repos = NULL, type = "win.binary")
