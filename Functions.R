@@ -52,9 +52,30 @@ hora()
 
 
 # crop raster data
+# 
 miFUN <- function(dato,vector){
-  
+  ext <- extent(vector)
+  CROP <- crop(dato,ext)
+  data_FIN <- mask(CROP,vector)
 }
+
+
+##########################
+
+fun.TS <- function(data,inicio,FREQ){
+  tmp <- cellStats(data,mean,na.rm=T)
+  tmp <- ts(tmp,start = inicio ,frequency = FREQ)
+  return(tmp)
+}
+
+fun.TS1 <- function(data,anio,mes,FREQ){
+  fecha<- c(anio,mes)
+  tmp <- cellStats(data,mean,na.rm=T)
+  tmp <- ts(tmp,start = fecha ,frequency = FREQ)
+  return(tmp)
+}
+
+
 
 
 
